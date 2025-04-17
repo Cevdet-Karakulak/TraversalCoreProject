@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Member\Data\" />
-    <Folder Include="Areas\Member\Models\" />
     <Folder Include="Views\Shared\Components\NewFolder\" />
   </ItemGroup>
 
