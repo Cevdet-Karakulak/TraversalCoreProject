@@ -1,4 +1,8 @@
+using BusinnessLayer.Abstract;
+using BusinnessLayer.Concrete;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +35,8 @@ namespace TraversalCoreProject
         {
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<Context>();
+            services.AddScoped<ICommentService,CommentManager>();
+            services.AddScoped<ICommentDal,EfCommentDal>();
 
             services.AddMvc(config =>
             {
@@ -79,6 +85,15 @@ namespace TraversalCoreProject
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
             });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+
+
 
         }
     }

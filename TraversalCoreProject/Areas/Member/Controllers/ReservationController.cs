@@ -24,24 +24,24 @@ namespace TraversalCoreProject.Areas.Member.Controllers
             _userManager = userManager;
         }
 
-        //public async Task<IActionResult> MyCurrentReservation()
-        //{
-        //    var values = await _userManager.FindByNameAsync(User.Identity.Name);
-        //    var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
-        //    return View(valuesList);
-        //}
-        //public async Task<IActionResult> MyOldReservation()
-        //{
-        //    var values = await _userManager.FindByNameAsync(User.Identity.Name);
-        //    var valuesList = reservationManager.GetListWithReservationByPrevious(values.Id);
-        //    return View(valuesList);
-        //}
-        //public async Task<IActionResult> MyApprovalReservation()
-        //{
-        //    var values = await _userManager.FindByNameAsync(User.Identity.Name);
-        //    var valuesList = reservationManager.GetListWithReservationByWaitAprroval(values.Id);
-        //    return View(valuesList);
-        //}
+        public async Task<IActionResult> MyCurrentReservation()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
+            return View(valuesList);
+        }
+        public async Task<IActionResult> MyOldReservation()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByPrevious(values.Id);
+            return View(valuesList);
+        }
+        public async Task<IActionResult> MyApprovalReservation()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByWaitAprroval(values.Id);
+            return View(valuesList);
+        }
 
         [HttpGet]
         public IActionResult NewReservation()

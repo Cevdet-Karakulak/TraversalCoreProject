@@ -575,7 +575,7 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("EntityLayer.Concrete.Destination", "Destination")
-                        .WithMany()
+                        .WithMany("Reservations")
                         .HasForeignKey("DestinationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -644,6 +644,8 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Destination", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

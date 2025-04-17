@@ -9,6 +9,6 @@ namespace BusinnessLayer.Abstract
 {
     public interface IDestinationService : IGenericService<Destination>
     {
-
+        
     }
 }
