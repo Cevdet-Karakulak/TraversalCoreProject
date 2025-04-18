@@ -32,21 +32,16 @@ namespace BusinnessLayer.Concrete
         {
             return _commentDal.GetByID(id);
         }
-
-        public List<Comment> TGetDestinationById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+                
         public List<Comment> TGetList()
         {
             return _commentDal.GetList();
         }
 
-        //public List<Comment> TGetDestinationById(int id)
-        //{
-        //    return _commentDal.GetListByFilter(x => x.DestinationID == id);
-        //}
+        public List<Comment> TGetDestinationById(int id)
+        {
+            return _commentDal.GetListByFilter(x => x.DestinationID == id);
+        }
 
         public void TUpdate(Comment t)
         {
