@@ -1,6 +1,7 @@
 ﻿using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
+using System;
 using TraversalCoreProject.Models;
 
 namespace TraversalCoreProject.Areas.Admin.Controllers
@@ -15,31 +16,52 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(MailRequest mailRequest)
         {
-            MimeMessage mimeMessage = new MimeMessage();
+            if (!ModelState.IsValid)
+            {
+                return View(mailRequest);
+            }
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "karakulakcevdet@gmail.com");
+            try
+            {
+                MimeMessage mimeMessage = new MimeMessage();
 
-            mimeMessage.From.Add(mailboxAddressFrom);
+                MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "karakulakcevdet@gmail.com");
+                mimeMessage.From.Add(mailboxAddressFrom);
 
-            MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailRequest.ReceiverMail);
-            mimeMessage.To.Add(mailboxAddressTo);
+                if (string.IsNullOrWhiteSpace(mailRequest.ReceiverMail))
+                {
+                    ModelState.AddModelError("ReceiverMail", "Alıcı e-posta adresi boş olamaz.");
+                    return View(mailRequest);
+                }
 
-            var bodyBuilder = new BodyBuilder();
-            bodyBuilder.TextBody = mailRequest.Body;
-            mimeMessage.Body = bodyBuilder.ToMessageBody();
+                MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailRequest.ReceiverMail);
+                mimeMessage.To.Add(mailboxAddressTo);
 
-            mimeMessage.Subject = mailRequest.Subject;
+                var bodyBuilder = new BodyBuilder();
+                bodyBuilder.TextBody = mailRequest.Body;
+                mimeMessage.Body = bodyBuilder.ToMessageBody();
 
-            SmtpClient client = new SmtpClient();
-            client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("karakulakcevdet@gmail.com", "bqchehivwoghfkhx");
-            client.Send(mimeMessage);
-            client.Disconnect(true);
+                mimeMessage.Subject = mailRequest.Subject;
+
+                using (SmtpClient client = new SmtpClient())
+                {
+                    client.Connect("smtp.gmail.com", 587, false);
+                    client.Authenticate("karakulakcevdet@gmail.com", "bqchehivwoghfkhx");
+                    client.Send(mimeMessage);
+                    client.Disconnect(true);
+                }
+
+                ViewBag.Message = "Mail başarıyla gönderildi.";
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Mail gönderimi sırasında bir hata oluştu: {ex.Message}");
+            }
+
             return View();
         }
     }
 }
-
-//karakulakcevdet@gmail.com

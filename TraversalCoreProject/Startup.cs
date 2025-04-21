@@ -1,10 +1,14 @@
 using BusinnessLayer.Abstract;
 using BusinnessLayer.Concrete;
 using BusinnessLayer.Container;
+using BusinnessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +53,14 @@ namespace TraversalCoreProject
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<Context>();
 
             services.ContainerDependencies();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.CustomerValidator();
+
+            services.AddControllersWithViews().AddFluentValidation();
+
+
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
