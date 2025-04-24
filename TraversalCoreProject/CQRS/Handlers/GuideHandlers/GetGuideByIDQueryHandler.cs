@@ -18,7 +18,7 @@ namespace TraversalCoreProject.CQRS.Handlers.GuideHandlers
 
         public async Task<GetGuideByIDQueryResult> Handle(GetGuideByIDQuery request, CancellationToken cancellationToken)
         {
-            var values = await _context.Guides.FindAsync(request.Id);
+            var values = await _context.Guides1.FindAsync(request.Id);
             return new GetGuideByIDQueryResult
             {
                 GuideID = values.GuideID,

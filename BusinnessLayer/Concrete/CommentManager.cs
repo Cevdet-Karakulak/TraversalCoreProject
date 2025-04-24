@@ -32,7 +32,7 @@ namespace BusinnessLayer.Concrete
         {
             return _commentDal.GetByID(id);
         }
-                
+
         public List<Comment> TGetList()
         {
             return _commentDal.GetList();
@@ -53,9 +53,9 @@ namespace BusinnessLayer.Concrete
             return _commentDal.GetListCommentWithDestination();
         }
 
-        //public List<Comment> TGetListCommentWithDestinationAndUser(int id)
-        //{
-        //    return _commentDal.GetListCommentWithDestinationAndUser(id);
-        //}
+        public List<Comment> TGetListCommentWithDestinationAndUser(int id)
+        {
+            return _commentDal.GetListCommentWithDestinationAndUser(id);
+        }
     }
 }

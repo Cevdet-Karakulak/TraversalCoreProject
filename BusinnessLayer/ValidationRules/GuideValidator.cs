@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinnessLayer.ValidationRules
 {
-    public class GuideValidator : AbstractValidator<Guide>
+    public class GuideValidator : AbstractValidator<Guide1>
     {
         public GuideValidator()
         {

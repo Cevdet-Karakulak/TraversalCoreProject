@@ -19,7 +19,7 @@ namespace TraversalCoreProject.CQRS.Handlers.GuideHandlers
         }
         public async Task<List<GetAllGuideQueryResult>> Handle(GetAllGuideQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Guides.Select(x => new GetAllGuideQueryResult
+            return await _context.Guides1.Select(x => new GetAllGuideQueryResult
             {
                 GuideID = x.GuideID,
                 Description = x.Description,

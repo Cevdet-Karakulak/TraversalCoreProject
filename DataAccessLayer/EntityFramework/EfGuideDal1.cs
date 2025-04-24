@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfGuideDal : GenericRepository<Guide>, IGuideDal
+    public class EfGuideDal1 : GenericRepository<Guide1>, IGuideDal1
     {
         Context context = new Context();
 
         public void ChangeToFalseByGuide(int id)
         {
-            var values = context.Guides.Find(id);
+            var values = context.Guides1.Find(id);
             values.Status = false;
             context.Update(values);
             context.SaveChanges();
@@ -24,7 +24,7 @@ namespace DataAccessLayer.EntityFramework
 
         public void ChangeToTrueByGuide(int id)
         {
-            var values = context.Guides.Find(id);
+            var values = context.Guides1.Find(id);
             values.Status = true;
             context.Update(values);
             context.SaveChanges();

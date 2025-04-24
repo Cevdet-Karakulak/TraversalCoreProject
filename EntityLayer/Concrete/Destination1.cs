@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace EntityLayer.Concrete
 {
-    public class Destination
+    public class Destination1
     {
         [Key]
         public int DestinationID { get; set; }
@@ -23,10 +22,10 @@ namespace EntityLayer.Concrete
         public string Details1 { get; set; }
         public string Details2 { get; set; }
         public string Image2 { get; set; }
-        //public DateTime Date { get; set; }
+        public DateTime Date { get; set; }
         public List<Comment> Comments { get; set; }
         public List<Reservation> Reservations { get; set; }
-        //public int GuideID { get; set; }
-        //public Guide Guide { get; set; }
+        public int GuideID { get; set; }
+        public Guide1 Guide1 { get; set; }
     }
 }

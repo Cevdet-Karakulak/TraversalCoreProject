@@ -12,7 +12,7 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
         }
         public void Handle(UpdateDestinationCommand command)
         {
-            var values = _context.Destinations.Find(command.DestinationID);
+            var values = _context.Destinations1.Find(command.DestinationID);
             values.City = command.City;
             values.DayNight = command.DayNight;
             values.Price = command.Price;

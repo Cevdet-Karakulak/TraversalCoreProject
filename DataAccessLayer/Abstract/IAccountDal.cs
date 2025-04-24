@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinnessLayer.Abstract
+namespace DataAccessLayer.Abstract
 {
-    public interface IDestinationService : IGenericService<Destination>
+    public interface IAccountDal : IGenericUowDal<Account>
     {
-        
     }
 }

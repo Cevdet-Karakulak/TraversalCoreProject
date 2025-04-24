@@ -28,7 +28,7 @@ namespace TraversalCoreProject.Controllers
             List<DestinationModel> destinationModels = new List<DestinationModel>();
             using (var c = new Context())
             {
-                destinationModels = c.Destinations.Select(x => new DestinationModel
+                destinationModels = c.Destinations1.Select(x => new DestinationModel
                 {
                     City = x.City,
                     DayNight = x.DayNight,

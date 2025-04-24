@@ -16,7 +16,7 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
 
         public List<GetAllDestinationQueryResult> Handle()
         {
-            var values = _context.Destinations.Select(x => new GetAllDestinationQueryResult
+            var values = _context.Destinations1.Select(x => new GetAllDestinationQueryResult
             {
                 id = x.DestinationID,
                 capacity = x.Capacity,

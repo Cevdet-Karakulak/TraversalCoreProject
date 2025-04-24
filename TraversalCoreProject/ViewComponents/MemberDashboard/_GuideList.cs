@@ -6,7 +6,7 @@ namespace TraversalCoreProject.ViewComponents.MemberDashboard
 {
     public class _GuideList : ViewComponent
     {
-        GuideManager guideManager = new GuideManager(new EfGuideDal());
+        GuideManager1 guideManager = new GuideManager1(new EfGuideDal1());
         public IViewComponentResult Invoke()
         {
             var values = guideManager.TGetList();

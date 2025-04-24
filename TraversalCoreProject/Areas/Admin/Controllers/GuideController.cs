@@ -15,9 +15,9 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
     [Route("Admin/Guide")]
     public class GuideController : Controller
     {
-        private readonly IGuideService _guideService;
+        private readonly IGuideService1 _guideService;
 
-        public GuideController(IGuideService guideService)
+        public GuideController(IGuideService1 guideService)
         {
             _guideService = guideService;
         }
@@ -37,7 +37,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 
         [Route("AddGuide")]
         [HttpPost]
-        public IActionResult AddGuide(Guide guide)
+        public IActionResult AddGuide(Guide1 guide)
         {
             GuideValidator validationRules = new GuideValidator();
             ValidationResult result = validationRules.Validate(guide);
@@ -64,7 +64,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         }
         [Route("EditGuide")]
         [HttpPost]
-        public IActionResult EditGuide(Guide guide)
+        public IActionResult EditGuide(Guide1 guide)
         {
             _guideService.TUpdate(guide);
             return RedirectToAction("Index");

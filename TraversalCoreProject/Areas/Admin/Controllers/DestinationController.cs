@@ -9,9 +9,9 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
     [Area("Admin")]
     public class DestinationController : Controller
     {
-        private readonly IDestinationService _destinationService;
+        private readonly IDestinationService1 _destinationService;
 
-        public DestinationController(IDestinationService destinationService)
+        public DestinationController(IDestinationService1 destinationService)
         {
             _destinationService = destinationService;
         }
@@ -27,7 +27,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddDestination(Destination destination)
+        public IActionResult AddDestination(Destination1 destination)
         {
             _destinationService.TAdd(destination);
             return RedirectToAction("Index");
@@ -45,7 +45,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
             return View(values);
         }
         [HttpPost]
-        public IActionResult UpdateDestination(Destination destination)
+        public IActionResult UpdateDestination(Destination1 destination)
         {
             if (ModelState.IsValid) // Modelin geçerli olup olmadığını kontrol et
             {

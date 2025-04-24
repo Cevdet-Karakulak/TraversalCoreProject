@@ -16,9 +16,9 @@ namespace EntityLayer.Concrete
         public string CommentContent { get; set; }
         public bool CommentState { get; set; }
         public int DestinationID { get; set; }
-        public Destination Destination { get; set; }
-        //public int AppUserID { get; set; }
-        //public AppUser AppUser { get; set; }
+        public Destination1 Destination1 { get; set; }
+        public int AppUserID { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }
 

@@ -2,7 +2,6 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +10,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfDestinationDal : GenericRepository<Destination>, IDestinationDal
+    public class EfAccountDal : GenericUowRepository<Account>, IAccountDal
     {
-       
+        public EfAccountDal(Context context) : base(context)
+        {
+
+        }
     }
 }

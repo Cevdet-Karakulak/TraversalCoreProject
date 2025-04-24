@@ -13,7 +13,7 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
         }
         public void Handle(CreateDestinationCommand command)
         {
-            _context.Destinations.Add(new Destination
+            _context.Destinations1.Add(new Destination1
             {
                 City = command.City,
                 Price = command.Price,

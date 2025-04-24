@@ -14,7 +14,7 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
 
         public GetDestinationByIDQueryResult Handle(GetDestinationByIDQuery query)
         {
-            var values = _context.Destinations.Find(query.id);
+            var values = _context.Destinations1.Find(query.id);
             return new GetDestinationByIDQueryResult
             {
                 DestinationID = values.DestinationID,

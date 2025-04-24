@@ -13,8 +13,8 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
 
         public void Handle(RemoveDestinationCommand command)
         {
-            var values = _context.Destinations.Find(command.Id);
-            _context.Destinations.Remove(values);
+            var values = _context.Destinations1.Find(command.Id);
+            _context.Destinations1.Remove(values);
             _context.SaveChanges();
         }
     }

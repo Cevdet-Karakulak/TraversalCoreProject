@@ -16,9 +16,9 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
     [Area("Admin")]
     public class CityController : Controller
     {
-        private readonly IDestinationService _destinationService;
+        private readonly IDestinationService1 _destinationService;
 
-        public CityController(IDestinationService destinationService)
+        public CityController(IDestinationService1 destinationService)
         {
             _destinationService = destinationService;
         }
@@ -34,11 +34,11 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCityDestination(Destination destination)
+        public IActionResult AddCityDestination(Destination1 destination1)
         {
-            destination.Status = true;
-            _destinationService.TAdd(destination);
-            var values = JsonConvert.SerializeObject(destination);
+            destination1.Status = true;
+            _destinationService.TAdd(destination1);
+            var values = JsonConvert.SerializeObject(destination1);
             return Json(values);
         }
 
@@ -56,7 +56,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
             return NoContent();
         }
 
-        public IActionResult UpdateCity(Destination destination)
+        public IActionResult UpdateCity(Destination1 destination)
         {
             _destinationService.TUpdate(destination);
             var v = JsonConvert.SerializeObject(destination);
