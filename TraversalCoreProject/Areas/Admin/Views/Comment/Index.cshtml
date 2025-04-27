@@ -19,11 +19,12 @@
     {
         <tr>
             <td>@item.CommentID</td>
-            <td>@item.CommentUser</td>
-            <td>@item.Destination1.City</td>
-            <td>@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</td>
-            <td><a href="/Admin/Comment/DeleteComment/@item.CommentID" class="btn btn-outline-danger">Sil</a></td>
+            <td>@(!string.IsNullOrEmpty(item.CommentUser) ? item.CommentUser : "Anonim")</td>
+            <td>@(item.Destination1 != null ? item.Destination1.City : "Rota Yok")</td>
+            <td>@(item.CommentDate != default(DateTime) ? item.CommentDate.ToString("dd-MMM-yyyy") : "Tarih Yok")</td>
+            <td>
+                <a href="/Admin/Comment/DeleteComment/@item.CommentID" class="btn btn-outline-danger">Sil</a>
+            </td>
         </tr>
     }
 </table>
-
