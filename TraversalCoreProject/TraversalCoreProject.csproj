@@ -45,8 +45,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Member\Data\" />
-    <Folder Include="Views\Shared\Components\_MemberLayoutLanguages\" />
-    <Folder Include="Views\Shared\_MemberLayoutSidebar\" />
     <Folder Include="wwwroot\Logs\" />
     <Folder Include="wwwroot\pdfreports\" />
   </ItemGroup>
