@@ -1,6 +1,6 @@
-### Traversal Seyahat Projesi
+## Murat Yücedağ hocamın rehberliğinde geliştirdiğim .NET Core 5.0 Traversal Seyahat  projemi sizlerle paylaşmak isterim.
 
-🎓 Traversal Seyahat, bir seyahat şirketinin tüm iş süreçlerini dijitalleştirmek amacıyla geliştirilmiş, vitrin web sitesi, kullanıcı paneli ve admin paneli barındıran kapsamlı bir web uygulamasıdır. Bu proje, modern yazılım mimarileri ve teknolojileri kullanılarak Murat Yücedağ eğitimi rehberliğinde ASP.NET Core 5.0 altyapısıyla oluşturulmuştur.
+🎓 Traversal Seyahat, bir seyahat şirketinin tüm iş süreçlerini dijitalleştirmek amacıyla geliştirilmiş, vitrin web sitesi, kullanıcı paneli ve admin paneli barındıran kapsamlı bir web uygulamasıdır. Bu proje, modern yazılım mimarileri ve teknolojileri kullanılarak Murat YÜCEDAĞ' ın youtubeda sunduğu 38 saat ve 100 derslik eğitimi rehberliğinde ASP.NET Core 5.0 altyapısıyla oluşturulmuştur.
 - 🌍 **Amaç**: Seyahat acentesi işleyişini dijital ortama taşımak
 - 🔗 **Hedefler**: Kullanıcı ve admin işlemlerini ayrı panel yapılarında yönetmek
 - 🌐 **Kullanıcılar**: Ziyaretçiler, Kayıtlı kullanıcılar, Adminler
