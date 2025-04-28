@@ -2,7 +2,7 @@
 @model List<Destination1>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
 <div class="row">
@@ -38,14 +38,15 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                    <tr>
-                        <td>@item.DestinationID</td>
-                        <td>@item.City</td>
-                        <td>@item.DayNight</td>
-                        <td>@item.Capacity</td>
-                        <td>@item.Price₺</td>
-                        <td><a href="/Destination/DestinationDetails/@item.DestinationID" class="btn btn-outline-info">Detaylar</a></td>
-                    </tr>}
+                                    <tr>
+                                        <td>@item.DestinationID</td>
+                                        <td>@item.City</td>
+                                        <td>@item.DayNight</td>
+                                        <td>@item.Capacity</td>
+                                        <td>@item.Price₺</td>
+                                        <td><a href="/Destination/DestinationDetails/@item.DestinationID" class="btn btn-outline-info">Detaylar</a></td>
+                                    </tr>
+                                }
 
                             </tbody>
                         </table>

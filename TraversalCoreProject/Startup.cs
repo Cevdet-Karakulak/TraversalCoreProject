@@ -81,6 +81,12 @@ namespace TraversalCoreProject
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
             services.AddMvc();
+            
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login/SignIn/";
+            });
+
 
             services.AddHttpClient();
 
@@ -128,13 +134,7 @@ namespace TraversalCoreProject
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
             });
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                );
-            });
+           
 
 
 

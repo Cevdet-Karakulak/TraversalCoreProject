@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\chameleon-bootstrap-html-admin-template-free-master\**" />
+    <Content Remove="wwwroot\chameleon-bootstrap-html-admin-template-free-master\**" />
+    <EmbeddedResource Remove="wwwroot\chameleon-bootstrap-html-admin-template-free-master\**" />
+    <None Remove="wwwroot\chameleon-bootstrap-html-admin-template-free-master\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="ClosedXML" Version="0.104.2" />
     <PackageReference Include="EPPlus" Version="8.0.2" />
@@ -38,6 +45,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Views\Shared\Components\_MemberLayoutLanguages\" />
+    <Folder Include="Views\Shared\_MemberLayoutSidebar\" />
     <Folder Include="wwwroot\Logs\" />
     <Folder Include="wwwroot\pdfreports\" />
   </ItemGroup>

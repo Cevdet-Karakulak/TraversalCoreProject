@@ -38,10 +38,10 @@ namespace BusinnessLayer.Concrete
             return _destinationDal1.GetDestinationWithGuide(id);
         }
 
-        //public List<Destination> TGetLast4Destinations()
-        //{
-        //    return _destinationDal.GetLast4Destinations();
-        //}
+        public List<Destination1> TGetLast4Destinations()
+        {
+            return _destinationDal1.GetLast4Destinations();
+        }
 
         public List<Destination1> TGetList()
         {
